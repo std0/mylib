@@ -3,6 +3,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+const apiRouter = require('./routes/api');
 const app = express();
 
 // Parse .env file.
@@ -34,9 +35,8 @@ app.use(session({
     resave: false
 }));
 
-app.get('/', (req, res) => {
-    res.json({message: "OK"});
-});
+// Register routes.
+app.use('/api', apiRouter);
 
 // Catch 404 and forward to error handler.
 app.use(function (req, res, next) {
