@@ -3,6 +3,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+const passport = require('./middleware/passport');
 const apiRouter = require('./routes/api');
 const app = express();
 
@@ -34,6 +35,10 @@ app.use(session({
     saveUninitialized: false,
     resave: false
 }));
+
+// Passport init.
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Register routes.
 app.use('/api', apiRouter);
