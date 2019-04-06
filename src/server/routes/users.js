@@ -1,13 +1,15 @@
+const {mustBeAuthenticated} = require('../middleware');
+const sanitizer = require('../middleware/sanitizer');
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
 
-router.post('/register', userController.register);
+router.post('/register', sanitizer.register, userController.register);
 
-router.post('/login', userController.login);
+router.post('/login', sanitizer.login, userController.login);
 
-router.get('/me', userController.getMyInfo);
+router.get('/me', mustBeAuthenticated, userController.getMyInfo);
 
-router.post('/logout', userController.logout);
+router.post('/logout', mustBeAuthenticated, userController.logout);
 
 module.exports = router;
