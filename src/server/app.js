@@ -50,6 +50,16 @@ app.use(function (req, res, next) {
 
 // Error handler.
 app.use(function (err, req, res, next) {
+    if (err.name === 'ValidatorError' || err.name === 'CastError') {
+        err = createError(400, err.message);
+    }
+
+    if (err.name === 'ValidationError') {
+        let errors = Object.values(err.errors);
+        errors = errors.map(error => error.message);
+        return res.status(400).json({errors});
+    }
+
     // Send the error response.
     res.status(err.status || 500).json(err);
 });

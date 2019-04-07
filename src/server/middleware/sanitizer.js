@@ -8,5 +8,13 @@ module.exports = {
     login: [
         sanitizeBody('username').trim().escape(),
         sanitizeBody('password').trim().escape()
+    ],
+    addBook: [
+        sanitizeBody('title').trim().escape(),
+        sanitizeBody('author').trim().escape()
+    ],
+    editBook: [
+        sanitizeBody('title').trim().escape(),
+        sanitizeBody('author').trim().escape()
     ]
 };
