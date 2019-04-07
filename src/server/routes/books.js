@@ -2,7 +2,10 @@ const {mustBeBookOwner} = require('../middleware');
 const sanitizer = require('../middleware/sanitizer');
 const express = require('express');
 const router = express.Router();
+const bookCopiesRouter = require('./bookCopies');
 const bookController = require('../controllers/bookController');
+
+router.use('/:bookId/copies', mustBeBookOwner, bookCopiesRouter);
 
 router.get('/', bookController.getBooksList);
 
