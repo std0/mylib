@@ -16,5 +16,9 @@ module.exports = {
     editBook: [
         sanitizeBody('title').trim().escape(),
         sanitizeBody('author').trim().escape()
+    ],
+    lendBookCopy: [
+        sanitizeBody('holder').trim().escape(),
+        sanitizeBody('returnDate').trim().escape()
     ]
 };
