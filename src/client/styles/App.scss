@@ -1,0 +1,24 @@
+.btn:focus {
+  box-shadow: none;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  border-width: 1px 0 2px 0;
+  border-color: #dee2e6;
+  border-style: solid;
+}
+
+.page-title {
+  font-size: 22pt;
+}
+
+.not-found {
+  text-align: center;
+}
+
+.form-errors {
+  p {
+    margin-bottom: 3px;
+  }
+}
