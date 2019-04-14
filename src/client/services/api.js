@@ -47,4 +47,34 @@ export default class ApiService {
         let promise = axios.post(url);
         return await ApiService.sendRequest(promise);
     }
+
+    static async getBooks() {
+        let url = '/api/books';
+        let promise = axios.get(url);
+        return await ApiService.sendRequest(promise);
+    }
+
+    static async addBook(bookData) {
+        let url = '/api/books/add';
+        let promise = axios.post(url, bookData);
+        return await ApiService.sendRequest(promise);
+    }
+
+    static async getBook(bookId) {
+        let url = `/api/books/${bookId}`;
+        let promise = axios.get(url);
+        return await ApiService.sendRequest(promise);
+    }
+
+    static async editBook(bookId, bookData) {
+        let url = `/api/books/${bookId}/edit`;
+        let promise = axios.post(url, bookData);
+        return await ApiService.sendRequest(promise);
+    }
+
+    static async removeBook(bookId) {
+        let url = `/api/books/${bookId}/remove`;
+        let promise = axios.post(url);
+        return await ApiService.sendRequest(promise);
+    }
 }
