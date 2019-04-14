@@ -77,4 +77,34 @@ export default class ApiService {
         let promise = axios.post(url);
         return await ApiService.sendRequest(promise);
     }
+
+    static async getBookCopies(bookId) {
+        let url = `/api/books/${bookId}/copies`;
+        let promise = axios.get(url);
+        return await ApiService.sendRequest(promise);
+    }
+
+    static async addBookCopy(bookId) {
+        let url = `/api/books/${bookId}/copies/add`;
+        let promise = axios.post(url);
+        return await ApiService.sendRequest(promise);
+    }
+
+    static async lendBookCopy(bookId, bookCopyId, holderData) {
+        let url = `/api/books/${bookId}/copies/${bookCopyId}/lend`;
+        let promise = axios.post(url, holderData);
+        return await ApiService.sendRequest(promise);
+    }
+
+    static async returnBookCopy(bookId, bookCopyId) {
+        let url = `/api/books/${bookId}/copies/${bookCopyId}/return`;
+        let promise = axios.post(url);
+        return await ApiService.sendRequest(promise);
+    }
+
+    static async removeBookCopy(bookId, bookCopyId) {
+        let url = `/api/books/${bookId}/copies/${bookCopyId}/remove`;
+        let promise = axios.post(url);
+        return await ApiService.sendRequest(promise);
+    }
 }

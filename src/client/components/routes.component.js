@@ -5,6 +5,7 @@ import Login from './user/login.component'
 import Register from './user/register.component';
 import BooksList from './book/books-list.component';
 import CreateBook from './book/create-book.component';
+import ViewBook from './book/view-book.component';
 import EditBook from './book/edit-book.component';
 
 const NotFound = () => (
@@ -28,7 +29,7 @@ export default class Routes extends Component {
                 <React.Fragment>
                     <Route path="/" exact component={BooksList}/>
                     <Route path="/create" component={CreateBook}/>
-                    <Route path="/view/:id"/>
+                    <Route path="/view/:id" component={ViewBook}/>
                     <Route path="/edit/:id" component={EditBook}/>
                 </React.Fragment>
             );
