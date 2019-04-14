@@ -32,3 +32,55 @@
   padding: 0;
   vertical-align: initial;
 }
+
+.book-details {
+  margin-bottom: 30px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.book-copies-header {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+
+  .book-copies-title {
+    margin: 0 20px 0 0;
+    font-size: 20pt;
+  }
+
+  .btn-group {
+    margin-right: 20px;
+  }
+}
+
+.book-copy {
+  .card-body {
+    h5 {
+      margin-bottom: 10px;
+    }
+
+    .holder-details {
+      margin-bottom: 15px;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .btn {
+      margin-right: 10px;
+    }
+  }
+}
+
+.modal {
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+
+  .close:focus {
+    outline: 0;
+  }
+}
